@@ -3,8 +3,10 @@
     --color-on-background: black;
     --color-background-hover: #eee;
     --color-on-background-hover: black;
-    --color-primary: #0066ff;
-    --color-on-primary: white;
+    /* Cheesy Yellow */
+    --color-primary: #ffcc00; 
+    /* Changed to black for readability on yellow */
+    --color-on-primary: black; 
     --color-error: #de0000;
     --color-on-error: white;
 }
@@ -16,9 +18,10 @@ header.dark {
     --color-on-background: white;
     --color-background-hover: #27262c;
     --color-on-background-hover: white;
-    --color-primary: #283593;
-    --color-primary-disabled: #1f213c;
-    --color-on-primary: white;
+    /* Deeper Gold/Cheddar for Dark Mode */
+    --color-primary: #e6a800; 
+    --color-primary-disabled: #463a12;
+    --color-on-primary: black;
     --color-error: #de0000;
     --color-on-error: white;
 }
@@ -53,12 +56,14 @@ header {
     background-color: var(--color-primary);
     color: var(--color-on-primary);
 }
+
 @media screen and (min-width: 1366px) {
     header {
         display: grid;
         padding-inline: 0;
     }
 }
+
 header .logo {
     justify-self: end;
     align-self: center;
@@ -66,6 +71,7 @@ header .logo {
     align-items: flex-end;
     gap: 1rem;
 }
+
 header .nav {
     flex: 1;
 }
@@ -77,6 +83,7 @@ main {
     grid-template-rows: minmax(0, 1fr);
     column-gap: 2rem;
 }
+
 main > div {
     overflow-y: auto;
 }

@@ -12,7 +12,13 @@
             "user": "Mohando",
             "link": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
             "percent": 48,
-            "hz": 75,
+            "hz": 75
+        },
+        {
+            "user": "Medan",
+            "link": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+            "percent": 45,
+            "hz": 75
         }
     ]
 }

@@ -1,27 +1,27 @@
 [
     {
         "role": "owner",
-        "name": "List Owner",
-        "link": "https://www.youtube.com/@Prometheus_Alt"
+        "name": "Mohando",
+        "link": "https://www.youtube.com/@Mohando."
     },
     {
         "role": "admin",
-        "name": "List Admin",
-        "link": "https://www.youtube.com/@Prometheus_Alt"
+        "name": "Eli",
+        "link": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
     },
     {
-        "role": "helper",
-        "name": "List Helper",
-        "link": "https://www.youtube.com/@Prometheus_Alt"
+        "role": "admin",
+        "name": "Medan",
+        "link": "https://www.youtube.com/@Merrowdraws29"
     },
-    {
-        "role": "trial",
-        "name": "Trial List Helper",
-        "link": "https://www.youtube.com/@Prometheus_Alt"
+        {
+        "role": "admin",
+        "name": "Moos",
+        "link": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
     },
     {
         "role": "dev",
-        "name": "List Coder",
-        "link": "https://www.youtube.com/@Prometheus_Alt"
+        "name": "Mohando",
+        "link": "https://www.youtube.com/@Mohando."
     }
 ]

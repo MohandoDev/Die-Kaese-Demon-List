@@ -1,0 +1,32 @@
+{
+    "id": 67,
+    "name": "Clubstep",
+    "author": "RobTopJames",
+    "creators": [
+        "RobTopJames"
+    ],
+    "verifier": "Eli",
+    "verification": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    "percentToQualify": 75,
+    "password": "Not Copyable",
+    "records": [
+        {
+            "user": "Medan",
+            "link": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+            "percent": 100,
+            "hz": 75
+        },
+        {
+            "user": "Aalon",
+            "link": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+            "percent": 100,
+            "hz": 75
+        },
+        {
+            "user": "Moos",
+            "link": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+            "percent": 100,
+            "hz": 75
+        }
+    ]
+}

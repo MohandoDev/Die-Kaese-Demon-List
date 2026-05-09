@@ -6,17 +6,28 @@ import { round, score } from './score.js';
 const dir = 'data';
 
 export async function fetchList() {
-    const listResult = await fetch(`${dir}/_list.json`);
-
     try {
+        const listResult = await fetch(`${dir}/_list.json`);
+        
+        // Check if the list file actually exists
+        if (!listResult.ok) throw new Error("Could not find _list.json");
+
         const list = await listResult.json();
 
         return await Promise.all(
             list.map(async (path, rank) => {
-                const levelResult = await fetch(`${dir}/${path}.json`);
-
                 try {
+                    const levelResult = await fetch(`${dir}/${path}.json`);
+                    
+                    // Check if the level file exists
+                    if (!levelResult.ok) throw new Error(`Level file ${path}.json not found`);
+
                     const level = await levelResult.json();
+
+                    // Ensure level data and records exist before sorting
+                    if (!level || !level.records) {
+                        throw new Error(`Level ${path} has missing data or records`);
+                    }
 
                     return [
                         {
@@ -28,16 +39,16 @@ export async function fetchList() {
                         },
                         null,
                     ];
-                } catch {
+                } catch (err) {
                     console.error(
-                        `Failed to load level #${rank + 1} ${path}.`
+                        `Failed to load level #${rank + 1} (${path}):`, err.message
                     );
                     return [null, path];
                 }
             }),
         );
-    } catch {
-        console.error(`Failed to load list.`);
+    } catch (err) {
+        console.error(`Failed to load list:`, err.message);
         return null;
     }
 }
@@ -45,6 +56,8 @@ export async function fetchList() {
 export async function fetchEditors() {
     try {
         const editorsResults = await fetch(`${dir}/_editors.json`);
+        if (!editorsResults.ok) return null;
+        
         const editors = await editorsResults.json();
         return editors;
     } catch {
@@ -53,18 +66,20 @@ export async function fetchEditors() {
 }
 
 export async function fetchLeaderboard() {
-    const list = await fetchList();
+    const listData = await fetchList();
+    if (!listData) return [[], []]; // Return empty if list failed
 
     const scoreMap = {};
     const errs = [];
 
-    list.forEach(([level, err], rank) => {
-        if (err) {
-            errs.push(err);
+    listData.forEach(([level, err], rank) => {
+        // If the level failed to load, skip logic and record the error
+        if (err || !level) {
+            errs.push(err || `Unknown error at rank ${rank + 1}`);
             return;
         }
 
-        // Verification
+        // Verification logic
         const verifier =
             Object.keys(scoreMap).find(
                 (u) => u.toLowerCase() === level.verifier.toLowerCase(),
@@ -85,7 +100,7 @@ export async function fetchLeaderboard() {
             link: level.verification,
         });
 
-        // Records
+        // Records logic
         level.records.forEach((record) => {
             const user =
                 Object.keys(scoreMap).find(
@@ -111,7 +126,6 @@ export async function fetchLeaderboard() {
                     ),
                     link: record.link,
                 });
-
                 return;
             }
 

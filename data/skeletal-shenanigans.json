@@ -8,6 +8,9 @@
     "percentToQualify": "45",
     "password": "NO Copy",
     "records": [
-        
+        {"user": "Eli",
+        "link": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+        "percent": 80,
+        "hz": 60}
     ]
 }

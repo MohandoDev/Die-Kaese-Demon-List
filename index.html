@@ -5,34 +5,31 @@
         <meta name="viewport" content="width=1024" />
         <title>Your List Name</title>
 
-        <!-- Favicon -->
-        <link rel="icon" href="./list_icon.png" />
+        <base href="/Die-Kaese-Demon-List/" />
+
+        <link rel="icon" href="list_icon.png" />
 
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
         <link
             href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@500;700&display=swap"
             rel="stylesheet"
         />
 
-        <!-- CSS FIXED PATHS -->
-        <link rel="stylesheet" href="./css/reset.css" />
-        <link rel="stylesheet" href="./css/typography.css" />
-        <link rel="stylesheet" href="./css/main.css" />
-        <link rel="stylesheet" href="./css/pages/list.css" />
-        <link rel="stylesheet" href="./css/pages/leaderboard.css" />
-        <link rel="stylesheet" href="./css/pages/roulette.css" />
-        <link rel="stylesheet" href="./css/components/nav.css" />
-        <link rel="stylesheet" href="./css/components/btn.css" />
-        <link rel="stylesheet" href="./css/components/tabs.css" />
+        <link rel="stylesheet" href="css/reset.css" />
+        <link rel="stylesheet" href="css/typography.css" />
+        <link rel="stylesheet" href="css/main.css" />
+        <link rel="stylesheet" href="css/pages/list.css" />
+        <link rel="stylesheet" href="css/pages/leaderboard.css" />
+        <link rel="stylesheet" href="css/pages/roulette.css" />
+        <link rel="stylesheet" href="css/components/nav.css" />
+        <link rel="stylesheet" href="css/components/btn.css" />
+        <link rel="stylesheet" href="css/components/tabs.css" />
 
-        <!-- Vue -->
         <script src="https://unpkg.com/vue@3.2.31/dist/vue.global.js"></script>
         <script src="https://unpkg.com/vue-router@4.0.14/dist/vue-router.global.prod.js"></script>
 
-        <!-- JS FIXED PATH -->
-        <script type="module" src="./js/main.js"></script>
+        <script type="module" src="js/main.js"></script>
     </head>
 
     <body id="app">
@@ -57,14 +54,11 @@
 
                 <div class="nav__actions">
                     <button class="nav__icon" @click.prevent="store.toggleDark()">
-                        <img
-                            :src="store.dark ? './assets/light.svg' : './assets/dark.svg'"
-                            alt=""
-                        />
+                        <img :src="store.dark ? 'assets/light.svg' : 'assets/dark.svg'" />
                     </button>
 
                     <a class="nav__icon" href="#">
-                        <img src="./assets/discord.svg" alt="Discord Logo" />
+                        <img src="assets/discord.svg" />
                     </a>
 
                     <a class="nav__cta type-label-lg" href="#" target="_blank">

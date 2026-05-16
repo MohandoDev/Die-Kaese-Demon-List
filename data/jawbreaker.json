@@ -8,5 +8,11 @@
     "percentToQualify": "35",
     "password": "NO Copy",
     "records": [
+        {
+            "user": "Medan",
+            "link": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+            "percent": 58,
+            "hz": 75
+        }
     ]
 }
